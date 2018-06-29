@@ -1,10 +1,10 @@
 /.idea
 /.netrwhist
 .DS_store
+autoload/*
 backup/*
 swap/*
 undo/*
-pack/*
+plugged/*
 !**/.keep
-!/pack/listup.rb
 
