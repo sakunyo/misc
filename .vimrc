@@ -6,6 +6,44 @@ source $VIMRUNTIME/defaults.vim
 
 
 "--------------------------------
+" VIM-PLUG
+" TODO: Plugin の非同期読み込み
+"--------------------------------
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+call plug#begin('~/.vim/plugged')
+Plug 'Shougo/denite.nvim'
+Plug 'mattn/emmet-vim'
+Plug 'mattn/googletranslate-vim'
+Plug 'itchyny/landscape.vim'
+Plug 'glidenote/memolist.vim'
+Plug 'Shougo/neocomplete.vim'
+Plug 'tyru/open-browser.vim'
+Plug 'kannokanno/previm'
+Plug 'vim-syntastic/syntastic'
+Plug 'mtscout6/syntastic-local-eslint.vim'
+Plug 'tomtom/tcomment_vim'
+Plug 'Quramy/tsuquyomi'
+Plug 'leafgarland/typescript-vim'
+Plug 'h1mesuke/vim-alignta'
+Plug 'kchmck/vim-coffee-script'
+Plug 'rhysd/vim-gfm-syntax'
+Plug 'airblade/vim-gitgutter'
+Plug 'digitaltoad/vim-pug'
+Plug 'thinca/vim-quickrun'
+Plug 'slim-template/vim-slim'
+Plug 'tpope/vim-surround'
+Plug 'mattn/vim-terminal'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'Shougo/vimfiler.vim'
+Plug 'othree/yajs.vim'
+call plug#end()
+
+
+"--------------------------------
 " STYLE
 "--------------------------------
 colorscheme landscape
