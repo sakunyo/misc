@@ -78,7 +78,6 @@ set tabstop=4                              " Tab桁数
 set ttyfast
 set undodir=~/.vim/undo
 set virtualedit+=block
-" highlight LineNr     ctermfg=208
 highlight SpecialKey ctermfg=235
 highlight SpaceKey   cterm=underline ctermfg=235
 
