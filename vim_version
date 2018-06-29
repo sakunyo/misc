@@ -1,0 +1,51 @@
+VIM - Vi IMproved 8.1 (2018 May 17, compiled Jun 26 2018 20:53:38)
+macOS 版
+適用済パッチ: 1-72
+Compiled by sakurasugo@SakuranoMacBook-Pro.local
+Huge 版 with MacVim GUI.  機能の一覧 有効(+)/無効(-)
++acl               +file_in_path      -mouse_jsbterm     +tag_binary
++arabic            +find_in_path      +mouse_netterm     +tag_old_static
++autocmd           +float             +mouse_sgr         -tag_any_white
+-autoservername    +folding           -mouse_sysmouse    -tcl
++balloon_eval      -footer            +mouse_urxvt       +termguicolors
++balloon_eval_term +fork()            +mouse_xterm       +terminal
++browse            +fullscreen        +multi_byte        +terminfo
+++builtin_terms    +gettext           +multi_lang        +termresponse
++byte_offset       +guess_encode      -mzscheme          +textobjects
++channel           -hangul_input      +netbeans_intg     +timers
++cindent           +iconv             +num64             +title
++clientserver      +insert_expand     +odbeditor         +toolbar
++clipboard         +job               +packages          +transparency
++cmdline_compl     +jumplist          +path_extra        +user_commands
++cmdline_hist      +kaoriya           +perl/dyn          +vertsplit
++cmdline_info      +keymap            +persistent_undo   +virtualedit
++comments          +lambda            +postscript        +visual
++conceal           +langmap           +printer           +visualextra
++cryptv            +libcall           +profile           +viminfo
++cscope            +linebreak         +python/dyn        +vreplace
++cursorbind        +lispindent        +python3/dyn       +wildignore
++cursorshape       +listcmds          +quickfix          +wildmenu
++dialog_con_gui    +localmap          +reltime           +windows
++diff              +lua/dyn           +rightleft         +writebackup
++digraphs          +menu              +ruby/dyn          -X11
++dnd               +migemo            +scrollbind        -xfontset
+-ebcdic            +mksession         +signs             +xim
++emacs_tags        +modify_fname      +smartindent       -xpm
++eval              +mouse             +startuptime       -xsmp
++ex_extra          +mouseshape        +statusline        -xterm_clipboard
++extra_search      +mouse_dec         -sun_workshop      -xterm_save
++farsi             -mouse_gpm         +syntax            
+      システム vimrc: "$VIM/vimrc"
+      ユーザー vimrc: "$HOME/.vimrc"
+   第2ユーザー vimrc: "~/.vim/vimrc"
+       ユーザー exrc: "$HOME/.exrc"
+     システム gvimrc: "$VIM/gvimrc"
+     ユーザー gvimrc: "$HOME/.gvimrc"
+  第2ユーザー gvimrc: "~/.vim/gvimrc"
+  デフォルトファイル: "$VIMRUNTIME/defaults.vim"
+    システムメニュー: "$VIMRUNTIME/menu.vim"
+       省略時の $VIM: "
+/usr/local/Cellar/macvim-kaoriya/HEAD-9e81e31/MacVim.app/Contents/Resources/vim
+"
+コンパイル: /usr/bin/clang -c -I. -Iproto -DHAVE_CONFIG_H -DFEAT_GUI_MACVIM -Wall -Wno-unknown-pragmas -pipe  -I/usr/local/Cellar/cmigemo-mk/HEAD-5c014a8/include -I/usr/local/Cellar/gettext/0.19.8.1/include -DMACOS_X -DMACOS_X_DARWIN  -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1       
+リンク: /usr/bin/clang   -L. -L/usr/local/lib -L. -L/usr/local/lib -L/usr/local/Cellar/gettext/0.19.8.1/lib -L/usr/local/lib -o Vim -framework Cocoa -framework Carbon       -lm  -lncurses -liconv -lintl -lmigemo -framework AppKit  -pagezero_size 10000 -image_base 100000000   -fstack-protector  -L/System/Library/Perl/5.16/darwin-thread-multi-2level/CORE 
