@@ -6,7 +6,5 @@ backup/*
 swap/*
 undo/*
 plugged/*
-!vim-plug/
 !**/.keep
-!/pack/listup.rb
 
