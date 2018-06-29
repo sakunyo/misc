@@ -40,12 +40,17 @@ Plug 'mattn/vim-terminal'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'Shougo/vimfiler.vim'
 Plug 'othree/yajs.vim'
+Plug 'altercation/vim-colors-solarized', {'do': 'cp colors/* ~/.vim/colors/'}
 call plug#end()
 
+let g:solarized_termcolors=256
 
 "--------------------------------
 " STYLE
 "--------------------------------
+syntax enable
+set background=light
+" colorscheme solarized
 colorscheme landscape
 set ambiwidth=double
 set autoread                               " 編集ファイルの自動更新
@@ -73,7 +78,7 @@ set tabstop=4                              " Tab桁数
 set ttyfast
 set undodir=~/.vim/undo
 set virtualedit+=block
-highlight LineNr     ctermfg=208
+" highlight LineNr     ctermfg=208
 highlight SpecialKey ctermfg=235
 highlight SpaceKey   cterm=underline ctermfg=235
 

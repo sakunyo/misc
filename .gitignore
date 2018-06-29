@@ -2,6 +2,7 @@
 /.netrwhist
 .DS_store
 autoload/*
+colors/*
 backup/*
 swap/*
 undo/*
