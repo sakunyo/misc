@@ -1,0 +1,10 @@
+/.idea
+/.netrwhist
+.DS_store
+backup/*
+swap/*
+undo/*
+pack/*
+!**/.keep
+!/pack/listup.rb
+
