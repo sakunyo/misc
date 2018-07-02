@@ -41,6 +41,7 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'Shougo/vimfiler.vim'
 Plug 'othree/yajs.vim'
 Plug 'altercation/vim-colors-solarized', {'do': 'cp colors/* ~/.vim/colors/'}
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
 let g:solarized_termcolors=256
@@ -50,8 +51,8 @@ let g:solarized_termcolors=256
 "--------------------------------
 syntax enable
 set background=light
-" colorscheme solarized
-colorscheme landscape
+colorscheme solarized
+" colorscheme landscape
 set ambiwidth=double
 set autoread                               " 編集ファイルの自動更新
 set backup
