@@ -50,9 +50,18 @@ let g:solarized_termcolors=256
 " STYLE
 "--------------------------------
 syntax enable
-set background=light
-colorscheme solarized
-" colorscheme landscape
+
+" Colors
+if !empty(glob("~/.vim/colors/solarized.vim"))
+  " https://github.com/altercation/vim-colors-solarized
+  set background=light
+  colorscheme solarized
+  hi SpecialKey ctermfg=254 ctermbg=NONE
+  hi SpaceKey   cterm=underline ctermfg=235
+else
+  colorscheme landscape
+endif
+
 set ambiwidth=double
 set autoread                               " 編集ファイルの自動更新
 set backup
@@ -67,7 +76,7 @@ set ignorecase                             " 検索で、大文字小文字を�
 set laststatus=2                           " ステータスラインを表示する
 set lazyredraw                             " 初期値：オフ " スクリプト実行中に画面を描画しない。
 set list                                   " 不可視文字を表示する
-set listchars=tab:>_,extends:>,precedes:<  " 不可視文字で表示される文字のフォーマットを指定する
+set listchars=tab:>-,extends:>,precedes:<  " 不可視文字で表示される文字のフォーマットを指定する
 set nowrap                                 " 右端で折り返さない
 set number                                 " 行番号を表示
 set ruler                                  " ルーラー表示
@@ -79,8 +88,6 @@ set tabstop=4                              " Tab桁数
 set ttyfast
 set undodir=~/.vim/undo
 set virtualedit+=block
-highlight SpecialKey ctermfg=235
-highlight SpaceKey   cterm=underline ctermfg=235
 
 
 "--------------------------------
