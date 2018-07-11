@@ -96,7 +96,7 @@ set virtualedit+=block
 autocmd BufRead,BufNew * match SpaceKey / /
 autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 autocmd BufNewFile,BufRead *.{mjs} set filetype=javascript
-autocmd BufWritePre * :%s/\s\+$//ge
+" autocmd BufWritePre * :%s/\s\+$//ge " It  omments out this line. because problem when git * -p 
 
 
 "--------------------------------
@@ -171,6 +171,7 @@ let g:quickrun_config['markdown'] = {
 "--------------------------------
 " SYNTASTIC
 "--------------------------------
+let g:syntastic_html_tidy_exec           = 'tidy5' " HTML5 attributes
 let g:syntastic_enable_signs             = 1 " エラー行に sign を表示
 let g:syntastic_always_populate_loc_list = 0 " location list を常に更新
 let g:syntastic_auto_loc_list            = 0 " location list を常に表示
