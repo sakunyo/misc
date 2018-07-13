@@ -9,11 +9,28 @@ PATH=$HOME/.ndenv/bin:$PATH
 PATH=$HOME/.plenv/bin:$PATH
 PATH=$HOME/.rbenv/bin:$PATH
 PATH=$HOME/.pyenv/bin:$PATH
-eval "$(jenv init -)"
-eval "$(ndenv init -)"
-eval "$(plenv init -)"
-eval "$(rbenv init -)"
-eval "$(pyenv init -)"
+
+function isCallable() {
+  eval "which $1" > /dev/null
+  local f=$?
+  if [ $f -eq 0 ] ; then
+    echo "true"
+  fi
+}
+
+function initEnv() {
+  if [ `isCallable $1` ] ; then
+    eval "$($1 init -)"
+    echo "did $1 init"
+  fi
+}
+
+initEnv "jenv"
+initEnv "ndenv"
+initEnv "plenv"
+initEnv "rbenv"
+initEnv "pyenv"
+
 eval "$(direnv hook bash)"
 
 GOPATH=$HOME
@@ -42,3 +59,4 @@ function openLocalhost() {
   ruby -e 'system "open", "http://localhost:#{ARGV.shift || 80}"' $1
 }
 alias l!=openLocalhost
+
