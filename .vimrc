@@ -17,8 +17,6 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'Shougo/denite.nvim'
 Plug 'mattn/emmet-vim'
-Plug 'mattn/googletranslate-vim'
-Plug 'itchyny/landscape.vim'
 Plug 'glidenote/memolist.vim'
 Plug 'Shougo/neocomplete.vim'
 Plug 'tyru/open-browser.vim'
@@ -29,16 +27,13 @@ Plug 'tomtom/tcomment_vim'
 Plug 'Quramy/tsuquyomi'
 Plug 'leafgarland/typescript-vim'
 Plug 'h1mesuke/vim-alignta'
-Plug 'kchmck/vim-coffee-script'
 Plug 'rhysd/vim-gfm-syntax'
 Plug 'airblade/vim-gitgutter'
-Plug 'digitaltoad/vim-pug'
 Plug 'thinca/vim-quickrun'
 Plug 'slim-template/vim-slim'
 Plug 'tpope/vim-surround'
 Plug 'mattn/vim-terminal'
 Plug 'bronson/vim-trailing-whitespace'
-Plug 'Shougo/vimfiler.vim'
 Plug 'othree/yajs.vim'
 Plug 'altercation/vim-colors-solarized', {'do': 'cp colors/* ~/.vim/colors/'}
 Plug 'scrooloose/nerdtree'
@@ -58,8 +53,6 @@ if !empty(glob("~/.vim/colors/solarized.vim"))
   colorscheme solarized
   hi SpecialKey ctermfg=254 ctermbg=NONE
   hi SpaceKey   cterm=underline ctermfg=235
-else
-  colorscheme landscape
 endif
 
 set ambiwidth=double

@@ -1,8 +1,6 @@
-# my bin
+# Load paths
 PATH=/usr/local/bin:$PATH
 PATH=$HOME/bin:$PATH
-
-# Languages
 PATH=$HOME/google-cloud-sdk/bin:$PATH
 PATH=$HOME/.jenv/bin:$PATH
 PATH=$HOME/.ndenv/bin:$PATH
