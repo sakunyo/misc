@@ -89,6 +89,7 @@ set virtualedit+=block
 autocmd BufRead,BufNew * match SpaceKey / /
 autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 autocmd BufNewFile,BufRead *.{mjs} set filetype=javascript
+autocmd BufNewFile,BufRead *.md setlocal wrap
 " autocmd BufWritePre * :%s/\s\+$//ge " It  omments out this line. because problem when git * -p 
 
 
