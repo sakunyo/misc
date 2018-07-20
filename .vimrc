@@ -18,9 +18,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'Shougo/denite.nvim'
 Plug 'mattn/emmet-vim'
 Plug 'glidenote/memolist.vim'
-Plug 'Shougo/neocomplete.vim'
 Plug 'tyru/open-browser.vim'
-Plug 'kannokanno/previm'
+Plug 'previm/previm' " Plug 'kannokanno/previm'
 Plug 'vim-syntastic/syntastic'
 Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'tomtom/tcomment_vim'
@@ -104,42 +103,42 @@ let g:SimpleJsIndenter_BriefMode = 1
 " NEOCOMPLETE
 " NOTE: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 "--------------------------------
-let g:acp_enableAtStartup                           = 0
-let g:neocomplete#enable_at_startup                 = 1
-let g:neocomplete#enable_smart_case                 = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#lock_buffer_name_pattern          = '\*ku\*'
-let g:neocomplete#sources#dictionary#dictionaries   = {
-  \ 'default' :  '',
-  \ 'vimshell' : $HOME.'/.vimshell_hist',
-  \ 'scheme' :   $HOME.'/.gosh_completions' }
-" Define keyword.
-if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
-endif
-let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-" Plugin key-mappings.
-inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-l>     neocomplete#complete_common_string()
-" Recommended key-mappings.
-function! s:my_cr_function()
-  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
-endfunction
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-" Enable omni completion.
-autocmd FileType css           setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript    setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python        setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml           setlocal omnifunc=xmlcomplete#CompleteTags
-" Enable heavy omni completion.
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
-let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+"    let g:acp_enableAtStartup                           = 0
+"    let g:neocomplete#enable_at_startup                 = 1
+"    let g:neocomplete#enable_smart_case                 = 1
+"    let g:neocomplete#sources#syntax#min_keyword_length = 3
+"    let g:neocomplete#lock_buffer_name_pattern          = '\*ku\*'
+"    let g:neocomplete#sources#dictionary#dictionaries   = {
+"      \ 'default' :  '',
+"      \ 'vimshell' : $HOME.'/.vimshell_hist',
+"      \ 'scheme' :   $HOME.'/.gosh_completions' }
+"    " Define keyword.
+"    if !exists('g:neocomplete#keyword_patterns')
+"        let g:neocomplete#keyword_patterns = {}
+"    endif
+"    let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+"    " Plugin key-mappings.
+"    inoremap <expr><C-g>     neocomplete#undo_completion()
+"    inoremap <expr><C-l>     neocomplete#complete_common_string()
+"    " Recommended key-mappings.
+"    function! s:my_cr_function()
+"      return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+"    endfunction
+"    inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+"    inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+"    inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+"    inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+"    " Enable omni completion.
+"    autocmd FileType css           setlocal omnifunc=csscomplete#CompleteCSS
+"    autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+"    autocmd FileType javascript    setlocal omnifunc=javascriptcomplete#CompleteJS
+"    autocmd FileType python        setlocal omnifunc=pythoncomplete#Complete
+"    autocmd FileType xml           setlocal omnifunc=xmlcomplete#CompleteTags
+"    " Enable heavy omni completion.
+"    if !exists('g:neocomplete#sources#omni#input_patterns')
+"      let g:neocomplete#sources#omni#input_patterns = {}
+"    endif
+"    let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 
 "--------------------------------
