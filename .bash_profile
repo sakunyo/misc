@@ -53,6 +53,7 @@ alias gc='git checkout $(gb | sed "s/^[ *]*//" | peco)'
 alias c.='cd ../'
 alias c..='cd ../../'
 alias c...='cd ../../../'
+alias tt=tmux
 function openLocalhost() {
   ruby -e 'system "open", "http://localhost:#{ARGV.shift || 80}"' $1
 }

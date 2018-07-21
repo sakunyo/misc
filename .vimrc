@@ -58,7 +58,7 @@ set ambiwidth=double
 set autoread                               " 編集ファイルの自動更新
 set backup
 set backupdir=~/.vim/backup
-set cmdheight=2                            " コマンドラインの高さ
+set cmdheight=1                            " コマンドラインの高さ
 set directory=~/.vim/swap
 set encoding=utf-8
 set expandtab                              " <TAB> => <SPACE>
