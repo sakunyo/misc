@@ -42,6 +42,7 @@ export EDITOR=mine
 ## Aliases
 alias ls='ls -alG'
 alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+alias gv='open -a /Applications/MacVim.app $@'
 alias gh='cd $(ghq list --full-path | peco)'
 alias gl='git log --graph --decorate --oneline'
 alias ga='git add -p'
