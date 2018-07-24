@@ -15,7 +15,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 call plug#begin('~/.vim/plugged')
-" Plug 'previm/previm'
+Plug 'previm/previm'
 Plug 'Quramy/tsuquyomi'
 Plug 'Shougo/denite.nvim'
 Plug 'Shougo/deoplete.nvim'
@@ -31,7 +31,6 @@ Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'othree/yajs.vim'
 Plug 'rhysd/vim-gfm-syntax'
-Plug 'sakunyo/previm'
 Plug 'scrooloose/nerdtree'
 Plug 'slim-template/vim-slim'
 Plug 'thinca/vim-quickrun'
