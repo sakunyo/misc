@@ -2,11 +2,6 @@
 PATH=/usr/local/bin:$PATH
 PATH=$HOME/bin:$PATH
 PATH=$HOME/google-cloud-sdk/bin:$PATH
-PATH=$HOME/.jenv/bin:$PATH
-PATH=$HOME/.ndenv/bin:$PATH
-PATH=$HOME/.plenv/bin:$PATH
-PATH=$HOME/.rbenv/bin:$PATH
-PATH=$HOME/.pyenv/bin:$PATH
 
 function isCallable() {
   eval "which $1" > /dev/null
@@ -18,6 +13,8 @@ function isCallable() {
 
 function initEnv() {
   if [ `isCallable $1` ] ; then
+    PATH="$HOME/.$1/bin":$PATH
+    PATH="$HOME/.$1/shims":$PATH
     eval "$($1 init -)"
     echo "did $1 init"
   fi
