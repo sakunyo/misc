@@ -4,19 +4,25 @@ PATH=$HOME/bin:$PATH
 PATH=$HOME/google-cloud-sdk/bin:$PATH
 
 function isCallable() {
-  eval "which $1" > /dev/null
-  local f=$?
-  if [ $f -eq 0 ] ; then
+  local p="$HOME/.$1"
+  if [ -d $p ] ; then
     echo "true"
+  else
+    echo "false"
   fi
 }
+# isCallable "42"
+# isCallable "ndenv"
 
 function initEnv() {
-  if [ `isCallable $1` ] ; then
+  local a=`isCallable $1`
+  if [ "$a" == "true" ] ; then
     PATH="$HOME/.$1/bin":$PATH
     PATH="$HOME/.$1/shims":$PATH
     eval "$($1 init -)"
-    echo "did $1 init"
+    echo "$1 init"
+  else
+    echo "$1 skip"
   fi
 }
 
