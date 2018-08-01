@@ -3,20 +3,8 @@ PATH=/usr/local/bin:$PATH
 PATH=$HOME/bin:$PATH
 PATH=$HOME/google-cloud-sdk/bin:$PATH
 
-function isCallable() {
-  local p="$HOME/.$1"
-  if [ -d $p ] ; then
-    echo "true"
-  else
-    echo "false"
-  fi
-}
-# isCallable "42"
-# isCallable "ndenv"
-
 function initEnv() {
-  local a=`isCallable $1`
-  if [ "$a" == "true" ] ; then
+  if [ -d "$HOME/.$1" ] ; then
     PATH="$HOME/.$1/bin":$PATH
     PATH="$HOME/.$1/shims":$PATH
     eval "$($1 init -)"
