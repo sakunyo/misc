@@ -39,6 +39,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
 Plug 'tyru/open-browser.vim'
 Plug 'vim-syntastic/syntastic'
+Plug 'posva/vim-vue'
 call plug#end()
 
 let g:solarized_termcolors=256

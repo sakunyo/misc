@@ -15,7 +15,7 @@ function initEnv() {
 }
 
 initEnv "jenv"
-initEnv "ndenv"
+initEnv "nodenv"
 initEnv "plenv"
 initEnv "rbenv"
 initEnv "pyenv"
