@@ -14,35 +14,65 @@ if empty(glob('~/.vim/autoload/plug.vim'))
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
+
 call plug#begin('~/.vim/plugged')
 Plug 'previm/previm'
-Plug 'Quramy/tsuquyomi'
-Plug 'Shougo/denite.nvim'
-Plug 'Shougo/deoplete.nvim'
-Plug 'airblade/vim-gitgutter'
-Plug 'altercation/vim-colors-solarized', {'do': 'cp colors/* ~/.vim/colors/'}
-Plug 'bronson/vim-trailing-whitespace'
-Plug 'glidenote/memolist.vim'
-Plug 'h1mesuke/vim-alignta'
-Plug 'leafgarland/typescript-vim'
-Plug 'mattn/emmet-vim'
-Plug 'mattn/vim-terminal'
-Plug 'mtscout6/syntastic-local-eslint.vim'
-Plug 'neovimhaskell/haskell-vim'
-Plug 'othree/yajs.vim'
-Plug 'rhysd/vim-gfm-syntax'
-Plug 'scrooloose/nerdtree'
-Plug 'slim-template/vim-slim'
-Plug 'thinca/vim-quickrun'
-Plug 'thinca/vim-themis'
-Plug 'tomtom/tcomment_vim'
-Plug 'tpope/vim-surround'
-Plug 'tyru/open-browser.vim'
-Plug 'vim-syntastic/syntastic'
-Plug 'posva/vim-vue'
-call plug#end()
 
-let g:solarized_termcolors=256
+Plug 'Quramy/tsuquyomi'
+
+Plug 'Shougo/denite.nvim'
+
+Plug 'Shougo/deoplete.nvim'
+
+Plug 'airblade/vim-gitgutter'
+
+Plug 'altercation/vim-colors-solarized', {
+  \ 'do': 'cp plugged/vim-colors-solarized/colors/* ~/.vim/colors/' }
+
+Plug 'bronson/vim-trailing-whitespace'
+
+Plug 'h1mesuke/vim-alignta'
+
+Plug 'leafgarland/typescript-vim'
+
+Plug 'mattn/emmet-vim'
+
+Plug 'mattn/vim-terminal'
+
+Plug 'mtscout6/syntastic-local-eslint.vim'
+
+Plug 'neovimhaskell/haskell-vim'
+
+Plug 'othree/yajs.vim'
+
+Plug 'rhysd/vim-gfm-syntax'
+
+Plug 'scrooloose/nerdtree'
+
+Plug 'slim-template/vim-slim'
+
+Plug 'thinca/vim-quickrun'
+
+Plug 'thinca/vim-themis'
+
+Plug 'tomtom/tcomment_vim'
+
+Plug 'tpope/vim-surround'
+
+Plug 'tyru/open-browser.vim'
+
+Plug 'vim-syntastic/syntastic'
+
+Plug 'posva/vim-vue'
+
+" spelling @see https://github.com/kamykn/spelunker.vim
+Plug 'kamykn/spelunker.vim'
+
+" post install (yarn install | npm install) then load plugin only for editing supported files
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+call plug#end()
 
 "--------------------------------
 " STYLE
@@ -50,14 +80,15 @@ let g:solarized_termcolors=256
 syntax enable
 
 " Colors
-if !empty(glob("~/.vim/colors/solarized.vim"))
-  " https://github.com/altercation/vim-colors-solarized
-  set background=light
-  colorscheme solarized
-  hi SpecialKey ctermfg=254 ctermbg=NONE
-  hi SpaceKey   cterm=underline ctermfg=235
-endif
+hi SpecialKey ctermfg=254 ctermbg=NONE
+hi SpaceKey   cterm=underline ctermfg=235
 
+hi clear SpellBad " Spelling Highlight の削除
+hi clear SpellCap " Spelling Highlight の削除 キャピタライズなので無視する
+hi SpellBad cterm=underline ctermfg=yellow
+
+
+"--------------------------------
 set ambiwidth=double
 set autoread                               " 編集ファイルの自動更新
 set backup
@@ -84,7 +115,7 @@ set tabstop=4                              " Tab桁数
 set ttyfast
 set undodir=~/.vim/undo
 set virtualedit+=block
-
+set spell spelllang=en,cjk
 
 "--------------------------------
 " Auto commands
@@ -137,36 +168,16 @@ let g:syntastic_typescript_checkers      = ['tsuquyomi']
 
 
 "--------------------------------
-" MEMOlIST
-" :MemoNew :MemoList :MemoGrep
+" NERDTree
 "--------------------------------
-let g:memolist_memo_suffix = "md"
-let g:memolist_path        = $HOME."/Dropbox/reports"
+let g:NERDTreeWinPos   = "right"
+let g:NERDTreeWinSize  = 50
+let NERDTreeShowHidden = 1
 
 
 "--------------------------------
-" CALENDAR
+" Prettier
 "--------------------------------
-let g:calendar_google_calendar = 1
-
-
-"--------------------------------
-" DENITE
-"--------------------------------
-" call denite#custom#filter('matcher/ignore_globs', 'ignore_globs',
-"       \ [
-"       \ '.git/',
-"       \ 'node_modules/',
-"       \ 'vender/',
-"       \ 'images/',
-"       \ '*.min.*',
-"       \ 'img/',
-"       \ 'fonts/'])
-" call denite#custom#var('file/rec', 'command',
-"       \ [
-"       \ 'rg',
-"       \ '--color',
-"       \ 'never',
-"       \ '--files'])
-
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
