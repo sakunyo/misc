@@ -7,7 +7,6 @@ source $VIMRUNTIME/defaults.vim
 
 "--------------------------------
 " VIM-PLUG
-" TODO: Plugin の非同期読み込み
 "--------------------------------
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
